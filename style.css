@@ -1,6 +1,6 @@
 /* Diagnostic Styling */
 * {
-  outline: 2px dotted gray;
+  /* outline: 2px dotted gray; */
 } 
 
 /* temp background color */
@@ -32,4 +32,161 @@ svg {
   height: auto;
   /* Center and fit */
   preserveAspectRatio: xMidYMid meet;
+  aspect-ratio: preserve;
+}
+
+/* icon stuff and animations */
+.lucide * {
+  transform-origin: center;
+}
+
+.electron1 {
+  animation: atomflip1 2s 5;
+}
+.electron2 {
+  animation: atomflip2 1.5s 5;
+}
+.nucleus {
+  fill: purple;
+  stroke: purple;
+  animation: nucleus 0.5s 5 ease;
+}
+
+.ds {
+  stroke: #b18557;
+}
+.ds1 {
+  animation: ds1 0.3s 5;
+}
+.ds2 {
+  animation: ds2 0.3s 5;
+  animation-delay: 0.3s;
+}
+
+.flagpart {
+  animation: flagpart 1s 5;
+  fill: red;
+}
+
+.lucide-audio-lines path:nth-of-type(1),
+.lucide-audio-lines path:nth-of-type(4) {
+  animation: audio 1s 5;
+}
+.lucide-audio-lines path:nth-of-type(2),
+.lucide-audio-lines path:nth-of-type(5) {
+  animation: audio 1.2s 5;
+}
+.lucide-audio-lines path:nth-of-type(3),
+.lucide-audio-lines path:nth-of-type(6) {
+  animation: audio 1.4s 5;
+}
+.spoon {
+  animation: soup-spoon 1.5s 5;
+}
+.steam {
+  stroke: grey;
+  animation: soup-steam 1.5s 5;
+}
+
+@keyframes atomflip1  {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  50% {
+    transform: rotate(-18deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes atomflip2  {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  50% {
+    transform: rotate(18deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes nucleus {
+  0% {
+    transform: translate(-1px,0px);
+  }
+  50% {
+    transform: translate(1px,0px);
+  }
+  100% {
+    transform: translate(-1px,0px)
+  }
+}
+@keyframes ds1 {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+  50% {
+    transform: rotate(-30deg);
+    transform-origin: top left;
+  }
+}
+@keyframes ds2 {
+  0% {
+    transform: rotate(30deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  100% {
+    transform: rotate(30deg);
+    transform-origin: top right;
+  }
+}
+@keyframes flagpart {
+  0% {
+    transform: scale(1,1);
+  }
+  50% {
+    transform: scale(1,0.7) translate(0px,-5px) skew(1deg,-10deg);
+  }
+  75% {
+    transform: scale(1,1) translate(0px,-1.5px) skew(0deg,5deg);
+  }
+}
+@keyframes audio {
+  0% {
+    transform: scale(1,0.8);
+    transform-origin: center;
+  }
+  50% {
+    transform: scale(1,1);
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(1,0.8);
+    transform-origin: center;
+  }
+}
+
+@keyframes soup-spoon {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-4px, 0px);
+  }
+}
+@keyframes soup-steam {
+  0% {
+    transform: scale(1,1);
+    transform-origin: center;
+  }
+  50% {
+    transform-origin: center;
+  }
 }
